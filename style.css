@@ -42,6 +42,8 @@ header h2 {
 }
 
 .nav-btn {
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    display: inline-block; /* Asegura que el enlace respete el padding */
     background: none;
     border: none;
     color: #9f8bb3;
@@ -71,14 +73,10 @@ main {
     padding: 0 20px;
 }
 
-/* Lógica para mostrar/ocultar pestañas */
+/* Lógica de pestañas (simplificada para HTML separados) */
 .tab-content {
-    display: none;
+    display: block; /* Siempre visible porque cada vista tiene su propio HTML */
     animation: fadeIn 0.4s ease-in-out;
-}
-
-.tab-content.active {
-    display: block;
 }
 
 @keyframes fadeIn {
@@ -103,7 +101,7 @@ h3 {
     margin-top: 0;
 }
 
-/* Estilo de los dummies (cajas de los gráficos) */
+/* Estilo de los dummies (cajas de los gráficos estáticos) */
 .dummy-chart {
     background-color: #18161d;
     border: 2px dashed #483d59;
@@ -124,4 +122,44 @@ h3 {
 .dummy-chart:hover {
     border-color: #55168C;
     color: #8c7aa1;
+}
+
+/* Contenedor de visualización mejorado (Para gráficos dinámicos interactivos) */
+.viz-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    background: #ffffff; /* Fondo blanco para que la gráfica resalte */
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #3a3247;
+}
+
+.chart-frame {
+    width: 100%;
+    height: 500px;
+}
+
+.chart-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.chart-description {
+    padding: 20px;
+    background: #1e1b24; /* Mantiene el tono oscuro para el texto */
+    color: #d1ced8;
+    border-top: 3px solid #55168C;
+}
+
+.chart-description h4 {
+    margin-top: 0;
+    color: #b59bd4;
+}
+
+.intro-text {
+    font-style: italic;
+    color: #9f8bb3;
+    margin-bottom: 30px;
 }

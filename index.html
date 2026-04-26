@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio de Visualización de Datos | Big Data</title>
+    <title>Portafolio de Visualización de Datos | Contexto</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,13 +13,13 @@
     </header>
 
     <nav class="navbar">
-        <button class="nav-btn active" onclick="switchTab('contexto-datos', this)">Contexto de los Datos</button>
-        <button class="nav-btn" onclick="switchTab('portafolio', this)">Actividad de Portafolio</button>
-        <button class="nav-btn" onclick="switchTab('trabajo-practico', this)">Actividad de Trabajo Práctico</button>
+        <a href="index.html" class="nav-btn active">Contexto de los Datos</a>
+        <a href="portafolio.html" class="nav-btn">Actividad de Portafolio</a>
+        <a href="trabajo-practico.html" class="nav-btn">Actividad de Trabajo Práctico</a>
     </nav>
 
     <main>
-        <section id="contexto-datos" class="tab-content active">
+        <section class="tab-content active">
             <div class="card">
                 <h3>Dataset: Simulación de Propagación de Daños en Motores de Aviación</h3>
                 <p>Para el desarrollo de las visualizaciones de este portafolio, se utiliza una única fuente de datos con dos enfoques de análisis separados. Los datos provienen de una simulación termodinámica de motores de turbina de gas de aviones comerciales[cite: 3, 4].</p>
@@ -34,53 +34,6 @@
                 </ul>
             </div>
         </section>
-
-        <section id="portafolio" class="tab-content">
-            <div class="card">
-                <h3>Gráficos de Clase</h3>
-                <p>En esta sección se exploran las visualizaciones desarrolladas durante las actividades del portafolio, enfocadas en el análisis exploratorio inicial de la degradación del motor.</p>
-                
-                <div class="dummy-chart" style="padding: 0; overflow: hidden;">
-                    <iframe src="grafico_evolucion.html" width="100%" height="100%" style="border:none;"></iframe>
-                </div>
-                
-                <div class="dummy-chart" style="padding: 0; overflow: hidden;">
-                    <iframe src="grafico_evolucion.html" width="100%" height="100%" style="border:none;"></iframe>
-                </div>
-            </div>
-        </section>
-
-        <section id="trabajo-practico" class="tab-content">
-            <div class="card">
-                <h3>Trabajo Práctico: Visualizaciones Avanzadas</h3>
-                <p>Implementación de múltiples herramientas, mapas y elementos dinámicos interactivos para evaluar el ciclo de vida (RUL) de los motores simulados.</p>
-                
-                <div class="dummy-chart">
-                    [Mapa Interactivo o Gráfico Dinámico - Inserta aquí tu HTML/iframe]
-                </div>
-
-                <div class="dummy-chart" style="height: 450px;">
-                    [Dashboard / Más de 2 tipos de gráficos - Inserta aquí tu HTML/iframe]
-                </div>
-            </div>
-        </section>
     </main>
-
-    <script>
-        function switchTab(tabId, btnElement) {
-            // Ocultar todas las secciones
-            document.querySelectorAll('.tab-content').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            // Quitar clase active de todos los botones
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-
-            // Mostrar la sección seleccionada y activar su botón
-            document.getElementById(tabId).classList.add('active');
-            btnElement.classList.add('active');
-        }
-    </script>
 </body>
 </html>
