@@ -1,79 +1,127 @@
+/* Paleta base: Metálicos oscuros y morado (#55168C) */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f7f6;
-    color: #333;
+    background-color: #16151a; /* Gris muy oscuro, casi negro */
+    color: #d1ced8; /* Blanco metálico desaturado */
     margin: 0;
     padding: 0;
     line-height: 1.6;
 }
 
 header {
-    background-color: #2c3e50;
-    color: #ffffff;
+    background: linear-gradient(135deg, #2b1c3d, #141118); /* Degradado metálico oscuro */
+    border-bottom: 2px solid #55168C; /* Tu color de acento */
     padding: 3rem 1rem;
     text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    color: #f0edf5;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 header h2 {
     margin: 10px 0 0 0;
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: #1abc9c;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #9f8bb3; /* Morado muy desaturado */
 }
 
+/* Estilos de la Barra de Navegación */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #1e1b24;
+    padding: 0;
+    border-bottom: 1px solid #362c45;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: #9f8bb3;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.nav-btn:hover {
+    color: #ffffff;
+    background-color: #26222e;
+}
+
+.nav-btn.active {
+    color: #ffffff;
+    border-bottom: 3px solid #55168C; /* Línea indicadora con tu color */
+    background: linear-gradient(to top, rgba(85, 22, 140, 0.2), transparent);
+}
+
+/* Contenedor Principal */
 main {
-    max-width: 900px;
-    margin: 2rem auto;
+    max-width: 1000px;
+    margin: 3rem auto;
     padding: 0 20px;
 }
 
+/* Lógica para mostrar/ocultar pestañas */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Tarjetas de Contenido */
 .card {
-    background: #ffffff;
+    background: linear-gradient(145deg, #231f2b, #1d1a24); /* Efecto placa metálica */
+    border: 1px solid #3a3247;
     border-radius: 8px;
-    padding: 25px;
-    margin-bottom: 25px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    padding: 30px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.4), 
+               -2px -2px 10px rgba(255,255,255,0.02);
 }
 
-.highlight {
-    border-left: 5px solid #d35400; /* Color naranja basado en tu imagen */
-    background-color: #fffaf0;
-}
-
-h2 {
-    color: #2c3e50;
-    border-bottom: 2px solid #ecf0f1;
+h3 {
+    color: #b59bd4;
+    border-bottom: 1px solid #3a3247;
     padding-bottom: 10px;
     margin-top: 0;
 }
 
-h3 {
-    color: #d35400;
-    margin-top: 0;
-}
-
-ul {
-    padding-left: 20px;
-}
-
-/* Estilo para las cajas de prueba donde irán tus gráficos */
+/* Estilo de los dummies (cajas de los gráficos) */
 .dummy-chart {
-    background-color: #e9ecef;
-    border: 2px dashed #adb5bd;
-    border-radius: 4px;
-    height: 350px; /* Altura por defecto */
+    background-color: #18161d;
+    border: 2px dashed #483d59;
+    border-radius: 6px;
+    height: 350px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #6c757d;
+    color: #6c5f7d;
     font-weight: bold;
-    margin: 20px 0;
+    margin: 25px 0;
     text-align: center;
     padding: 20px;
     box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.dummy-chart:hover {
+    border-color: #55168C;
+    color: #8c7aa1;
 }
