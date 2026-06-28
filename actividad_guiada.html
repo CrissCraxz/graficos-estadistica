@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Análisis y Visualización de Datos Avanzada</h1>
+    <header class="header">
+        <h1>Análisis y Visualización de Datos - 08MBID </h1>
         <h2>Christian Michael Obando Garcés | Máster en Big Data y Ciencia de Datos</h2>
     </header>
 
@@ -17,8 +17,80 @@
         <a href="actividad_practico.html" class="nav-btn">Actividad de Trabajo Práctico</a>
     </nav>
 
-    <main>
+    <main class="container">
+        
+        <section class="card">
+            <div class="header-links">
+                <a href="https://stackblitzstarters6z66gugd-zvjg--8080--29a3b5f7.local-corp.webcontainer.io" target="_blank" class="btn">🔗 Ver Proyecto StackBlitz</a>
+                <a href="https://colab.research.google.com/drive/11NJVNo-NHlXSUj-_ugr9rm8kClLEgizU?usp=sharing" target="_blank" class="btn">📊 Ver Google Colab</a>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Actividad Guiada 1 - GOOGLE SHEET</h2>
+            <div class="iframe-wrapper">
+                <iframe seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTFLxNuj-ljDFdAiAx6Bff97eOuLq5bKR7v_nxgTdsKbGoGkpAGSflj9et9sBz4dZIS8b-jBYQjgAnI/pubchart?oid=1736764273&amp;format=interactive"></iframe>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Ampliación de la Práctica - Gráficos Combinados</h2>
+            <p>Múltiples Variables.</p>
+            <div class="iframe-wrapper">
+                <iframe seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTFLxNuj-ljDFdAiAx6Bff97eOuLq5bKR7v_nxgTdsKbGoGkpAGSflj9et9sBz4dZIS8b-jBYQjgAnI/pubchart?oid=72440438&amp;format=interactive"></iframe>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Datawrapper - CO2 Totales vs per cápita</h2>
+            <iframe title="CO2 Totales vs CO2 per capita" aria-label="Scatter Plot" id="datawrapper-chart-Kxsbj" src="https://datawrapper.dwcdn.net/Kxsbj/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none" height="479" data-external="1"></iframe>
+        </section>
+
+        <section class="card">
+            <h2>Ampliación de la Práctica - Top 10 Países en emisiones de CO2</h2>
+            <iframe title="Top 10 Emisiones CO2 en 2026" aria-label="Bar Chart" id="datawrapper-chart-8lZRA" src="https://datawrapper.dwcdn.net/8lZRA/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none" height="484" data-external="1"></iframe>
+        </section>
+
+        <section class="card">
+            <h2>Visualización - AG2 POWER BI</h2>
+            <div class="image-grid">
+                <img src="./images/V1.png" alt="Visualización Power BI 1" class="responsive-img" />
+                <img src="./images/V2.png" alt="Visualización Power BI 2" class="responsive-img" />
+                <img src="./images/V3.png" alt="Visualización Power BI 3" class="responsive-img" />
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Visualización - AG3 Data Studio</h2>
+            <div class="iframe-wrapper datastudio-wrapper">
+                <iframe src="https://datastudio.google.com/embed/reporting/91becedd-e2d7-4987-ae0c-db207c1017aa/page/vIZvF" frameborder="0" style="border: 0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Visualización - AG3 Python</h2>
+            <img src="./images/V4.png" alt="Visualización Python" class="responsive-img" />
+        </section>
 
     </main>
+
+    <script type="text/javascript">
+      (function () {
+        function e() {
+          window.addEventListener(`message`, function (e) {
+            if (e.data[`datawrapper-height`] !== void 0) {
+              var t = document.querySelectorAll(`iframe`);
+              for (var n in e.data[`datawrapper-height`])
+                for (var r = 0, i; (i = t[r]); r++)
+                  if (i.contentWindow === e.source) {
+                    var a = e.data[`datawrapper-height`][n] + `px`;
+                    i.style.height = a;
+                  }
+            }
+          });
+        }
+        e();
+      })();
+    </script>
 </body>
 </html>
