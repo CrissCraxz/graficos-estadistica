@@ -191,3 +191,24 @@ main {
     margin: 0 auto;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
+
+/* =========================================
+   CONTENEDOR ESPECÍFICO PARA GOOGLE SHEETS
+   ========================================= */
+.sheets-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    background-color: #FAFAFA;
+    border-radius: 8px;
+    border: 1px solid #EAE0D5;
+    overflow-x: auto; /* Permite scroll horizontal en móviles */
+}
+
+.sheets-wrapper iframe {
+    width: 650px; /* Ancho fijo para que el gráfico no se corte */
+    height: 400px; /* Alto fijo */
+    border: none;
+    max-width: 100%;
+}
