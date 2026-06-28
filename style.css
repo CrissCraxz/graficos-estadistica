@@ -1,25 +1,31 @@
-/* Paleta base: Metálicos oscuros y morado (#55168C) */
+/* =========================================
+   PALETA BASE: Tonos Cálidos y Limpios
+   Fondo: Crema suave
+   Acento: Terracota / Naranja Quemado (#D46A43)
+   Texto: Gris oscuro cálido (#4A403A)
+   ========================================= */
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #16151a; /* Gris muy oscuro, casi negro */
-    color: #d1ced8; /* Blanco metálico desaturado */
+    background-color: #FDFBF7; /* Crema muy suave, relaja la vista */
+    color: #4A403A; /* Gris cálido oscuro para texto, menos agresivo que el negro puro */
     margin: 0;
     padding: 0;
     line-height: 1.6;
 }
 
 header {
-    background: linear-gradient(135deg, #2b1c3d, #141118);
-    border-bottom: 2px solid #55168C;
+    background: linear-gradient(135deg, #FFFFFF, #FFF5EE); /* Degradado cálido muy sutil */
+    border-bottom: 2px solid #D46A43; /* Acento terracota */
     padding: 3rem 1rem;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
 }
 
 header h1 {
     margin: 0;
     font-size: 2.2rem;
-    color: #f0edf5;
+    color: #2C2420;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -27,18 +33,18 @@ header h1 {
 header h2 {
     margin: 10px 0 0 0;
     font-size: 1.1rem;
-    font-weight: 300;
-    color: #9f8bb3;
+    font-weight: 400;
+    color: #8C7A6B; /* Tono café/gris claro */
 }
 
 /* Estilos de la Barra de Navegación */
 .navbar {
     display: flex;
     justify-content: center;
-    background-color: #1e1b24;
+    background-color: #FFFFFF;
     padding: 0;
-    border-bottom: 1px solid #362c45;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    border-bottom: 1px solid #EAE0D5;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
 }
 
 .nav-btn {
@@ -46,7 +52,7 @@ header h2 {
     display: inline-block;
     background: none;
     border: none;
-    color: #9f8bb3;
+    color: #8C7A6B;
     padding: 15px 30px;
     font-size: 1rem;
     font-weight: 600;
@@ -56,14 +62,14 @@ header h2 {
 }
 
 .nav-btn:hover {
-    color: #ffffff;
-    background-color: #26222e;
+    color: #D46A43;
+    background-color: #FAFAFA;
 }
 
 .nav-btn.active {
-    color: #ffffff;
-    border-bottom: 3px solid #55168C;
-    background: linear-gradient(to top, rgba(85, 22, 140, 0.2), transparent);
+    color: #D46A43;
+    border-bottom: 3px solid #D46A43;
+    background: linear-gradient(to top, rgba(212, 106, 67, 0.05), transparent);
 }
 
 /* Contenedor Principal */
@@ -78,23 +84,22 @@ main {
 
 /* Tarjetas de Contenido */
 .card {
-    background: linear-gradient(145deg, #231f2b, #1d1a24);
-    border: 1px solid #3a3247;
+    background: #FFFFFF;
+    border: 1px solid #EAE0D5;
     border-radius: 8px;
     padding: 30px;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.4), 
-               -2px -2px 10px rgba(255,255,255,0.02);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03); /* Sombra muy suave para dar profundidad */
 }
 
 .card h2 {
-    color: #b59bd4;
-    border-bottom: 1px solid #3a3247;
+    color: #D46A43;
+    border-bottom: 1px solid #EAE0D5;
     padding-bottom: 10px;
     margin-top: 0;
 }
 
 .card p {
-    color: #d1ced8;
+    color: #6B5E54;
     margin-bottom: 15px;
 }
 
@@ -110,20 +115,21 @@ main {
 .btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #55168C;
-    color: #fff;
+    background-color: #D46A43;
+    color: #FFFFFF;
     text-decoration: none;
     border-radius: 6px;
     font-weight: 500;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
 .btn:hover {
-    background-color: #7026b3;
+    background-color: #BF5A36;
+    transform: translateY(-1px);
 }
 
 /* =========================================
-   SISTEMA RESPONSIVO PARA GRÁFICOS (NUEVO)
+   SISTEMA RESPONSIVO PARA GRÁFICOS
    ========================================= */
 
 /* Envoltorio para iframes (Google Sheets, Datawrapper) */
@@ -132,8 +138,9 @@ main {
     width: 100%;
     overflow: hidden;
     padding-top: 60%; /* Ratio para mantener proporciones */
-    background-color: #ffffff; /* Fondo blanco para que los iframes no queden transparentes contra el fondo oscuro */
+    background-color: #FAFAFA;
     border-radius: 8px;
+    border: 1px solid #EAE0D5;
 }
 
 .iframe-wrapper iframe {
@@ -145,28 +152,42 @@ main {
     border: none;
 }
 
-/* Envoltorio específico para Data Studio (Requiere más altura) */
-.datastudio-wrapper {
-    padding-top: 75%; 
-    min-height: 600px; /* Previene que se corte en móviles */
+/* SOLUCIÓN PARA DATA STUDIO 
+   Envoltorio con scroll en lugar de ratio estricto
+*/
+.scrollable-wrapper {
+    width: 100%;
+    overflow-x: auto; /* Permite scroll horizontal en móviles sin romper el gráfico */
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 15px 0;
+    border: 1px solid #EAE0D5;
+}
+
+/* Contenedor individual para imágenes apiladas (ej. Power BI) */
+.chart-container {
+    margin-bottom: 40px;
+    background-color: #FAFAFA; 
+    padding: 25px 20px;
+    border-radius: 8px;
+    border: 1px dashed #D5CACA; /* Borde punteado sutil */
+}
+
+.chart-container h3 {
+    color: #4A403A; 
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    text-align: center;
+    border-bottom: none; 
 }
 
 /* Imágenes Responsivas */
 .responsive-img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 6px;
     display: block;
     margin: 0 auto;
-}
-
-/* Cuadrícula para múltiples imágenes (Power BI) */
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}
-
-.image-grid img {
-    border: 1px solid #3a3247;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
