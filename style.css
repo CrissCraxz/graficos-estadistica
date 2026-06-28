@@ -9,8 +9,8 @@ body {
 }
 
 header {
-    background: linear-gradient(135deg, #2b1c3d, #141118); /* Degradado metálico oscuro */
-    border-bottom: 2px solid #55168C; /* Tu color de acento */
+    background: linear-gradient(135deg, #2b1c3d, #141118);
+    border-bottom: 2px solid #55168C;
     padding: 3rem 1rem;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
@@ -28,7 +28,7 @@ header h2 {
     margin: 10px 0 0 0;
     font-size: 1.1rem;
     font-weight: 300;
-    color: #9f8bb3; /* Morado muy desaturado */
+    color: #9f8bb3;
 }
 
 /* Estilos de la Barra de Navegación */
@@ -42,8 +42,8 @@ header h2 {
 }
 
 .nav-btn {
-    text-decoration: none; /* Quita el subrayado de los enlaces */
-    display: inline-block; /* Asegura que el enlace respete el padding */
+    text-decoration: none;
+    display: inline-block;
     background: none;
     border: none;
     color: #9f8bb3;
@@ -62,7 +62,7 @@ header h2 {
 
 .nav-btn.active {
     color: #ffffff;
-    border-bottom: 3px solid #55168C; /* Línea indicadora con tu color */
+    border-bottom: 3px solid #55168C;
     background: linear-gradient(to top, rgba(85, 22, 140, 0.2), transparent);
 }
 
@@ -71,22 +71,14 @@ main {
     max-width: 1000px;
     margin: 3rem auto;
     padding: 0 20px;
-}
-
-/* Lógica de pestañas (simplificada para HTML separados) */
-.tab-content {
-    display: block; /* Siempre visible porque cada vista tiene su propio HTML */
-    animation: fadeIn 0.4s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 /* Tarjetas de Contenido */
 .card {
-    background: linear-gradient(145deg, #231f2b, #1d1a24); /* Efecto placa metálica */
+    background: linear-gradient(145deg, #231f2b, #1d1a24);
     border: 1px solid #3a3247;
     border-radius: 8px;
     padding: 30px;
@@ -94,72 +86,87 @@ main {
                -2px -2px 10px rgba(255,255,255,0.02);
 }
 
-h3 {
+.card h2 {
     color: #b59bd4;
     border-bottom: 1px solid #3a3247;
     padding-bottom: 10px;
     margin-top: 0;
 }
 
-/* Estilo de los dummies (cajas de los gráficos estáticos) */
-.dummy-chart {
-    background-color: #18161d;
-    border: 2px dashed #483d59;
-    border-radius: 6px;
-    height: 350px;
+.card p {
+    color: #d1ced8;
+    margin-bottom: 15px;
+}
+
+/* Botones de enlace */
+.header-links {
     display: flex;
-    align-items: center;
     justify-content: center;
-    color: #6c5f7d;
-    font-weight: bold;
-    margin: 25px 0;
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
 }
 
-.dummy-chart:hover {
-    border-color: #55168C;
-    color: #8c7aa1;
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #55168C;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
 }
 
-/* Contenedor de visualización mejorado (Para gráficos dinámicos interactivos) */
-.viz-container {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 40px;
-    background: #ffffff; /* Fondo blanco para que la gráfica resalte */
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #3a3247;
+.btn:hover {
+    background-color: #7026b3;
 }
 
-.chart-frame {
+/* =========================================
+   SISTEMA RESPONSIVO PARA GRÁFICOS (NUEVO)
+   ========================================= */
+
+/* Envoltorio para iframes (Google Sheets, Datawrapper) */
+.iframe-wrapper {
+    position: relative;
     width: 100%;
-    height: 500px;
+    overflow: hidden;
+    padding-top: 60%; /* Ratio para mantener proporciones */
+    background-color: #ffffff; /* Fondo blanco para que los iframes no queden transparentes contra el fondo oscuro */
+    border-radius: 8px;
 }
 
-.chart-frame iframe {
+.iframe-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     border: none;
 }
 
-.chart-description {
-    padding: 20px;
-    background: #1e1b24; /* Mantiene el tono oscuro para el texto */
-    color: #d1ced8;
-    border-top: 3px solid #55168C;
+/* Envoltorio específico para Data Studio (Requiere más altura) */
+.datastudio-wrapper {
+    padding-top: 75%; 
+    min-height: 600px; /* Previene que se corte en móviles */
 }
 
-.chart-description h4 {
-    margin-top: 0;
-    color: #b59bd4;
+/* Imágenes Responsivas */
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
 }
 
-.intro-text {
-    font-style: italic;
-    color: #9f8bb3;
-    margin-bottom: 30px;
+/* Cuadrícula para múltiples imágenes (Power BI) */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.image-grid img {
+    border: 1px solid #3a3247;
 }
