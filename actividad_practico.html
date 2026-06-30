@@ -24,13 +24,15 @@
         <section class="card info-trabajo">
             <div class="header-links">
                 <a href="https://drive.google.com/drive/folders/17CFAjoouW-DShZfCJzG9A6Z-I8i_fBFH?usp=sharing"
-                    target="_blank" rel="noopener noreferrer" class="btn">Fuente de los datos</a>
+                    target="_blank" rel="noopener noreferrer" class="btn">Fuente de los datos SRI</a>
                 <a href="https://colab.research.google.com/drive/1Fh-Ni57J78DvrUhvddmASP1kfzGwmYBn?usp=sharing"
                     target="_blank" rel="noopener noreferrer" class="btn">Google Colab (ETL)</a>
                 <a href="https://docs.google.com/spreadsheets/d/1BrErKkG9BslvOXlVyyeQCOgwjet3-tStqyTUBhxGzoQ/edit?usp=sharing"
                     target="_blank" rel="noopener noreferrer" class="btn">Gráfico de Impuestos</a>
                 <a href="https://docs.google.com/spreadsheets/d/1ZlG119VCPoTqmqW6pkkSaoh3hop4pyWnKFWNAb4Bm5k/edit?usp=sharing"
                     target="_blank" rel="noopener noreferrer" class="btn">Gráfico de Tendencias</a>
+                <a href="https://docs.google.com/spreadsheets/d/1ZlG119VCPoTqmqW6pkkSaoh3hop4pyWnKFWNAb4Bm5k/edit?usp=sharing"
+                    target="_blank" rel="noopener noreferrer" class="btn">Mi URL de la Web</a>
             </div>
         </section>
 
@@ -68,41 +70,41 @@
             </ul>
         </section>
 
-<article class="grafico-bloque">
-                <h4 class="grafico-titulo">Descripción de los Datos y Arquitectura</h4>
-                <div class="caja-informacion">
-                    <p>Para este análisis se procesaron los conjuntos de datos abiertos del SRI (Ventas y Recaudación). Se implementó un pipeline de datos basado en la <strong>Arquitectura Medallón</strong>, garantizando la calidad y trazabilidad de la información financiera a través de tres fases de refinamiento:</p>
-                    
-                    <div style="overflow-x: auto; margin-top: 15px;">
-                        <table style="width: 100%; border-collapse: collapse; font-family: sans-serif; text-align: left;">
-                            <thead>
-                                <tr style="background-color: #f4f6f8; border-bottom: 2px solid #333;">
-                                    <th style="padding: 12px; font-weight: bold; width: 20%;">Capa</th>
-                                    <th style="padding: 12px; font-weight: bold; width: 25%;">Objetivo</th>
-                                    <th style="padding: 12px; font-weight: bold;">Procesos Aplicados</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr style="border-bottom: 1px solid #e0e0e0;">
-                                    <td style="padding: 12px;"><strong> Bronce</strong></td>
-                                    <td style="padding: 12px;">Ingesta Cruda</td>
-                                    <td style="padding: 12px;">Validación inicial de formatos estructurales y eliminación estricta de registros con nulos geográficos.</td>
-                                </tr>
-                                <tr style="border-bottom: 1px solid #e0e0e0;">
-                                    <td style="padding: 12px;"><strong> Plata</strong></td>
-                                    <td style="padding: 12px;">Limpieza y Casteo</td>
-                                    <td style="padding: 12px;">Estandarización de textos y transformación de cadenas (strings con comillas/comas) a numéricos financieros precisos.</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 12px;"><strong> Oro</strong></td>
-                                    <td style="padding: 12px;">Modelado Analítico</td>
-                                    <td style="padding: 12px;">Mapeo jerárquico por regiones naturales (Costa, Sierra, Oriente, Insular) y cálculo de KPIs como Liquidez Neta y Carga Fiscal Promedio.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+        <article class="grafico-bloque">
+            <h4 class="grafico-titulo">Descripción de los Datos y Arquitectura</h4>
+            <div class="caja-informacion">
+                <p>Para este análisis se procesaron los conjuntos de datos abiertos del SRI (Ventas y Recaudación). Se implementó un pipeline de datos basado en la <strong>Arquitectura Medallón</strong>, garantizando la calidad y trazabilidad de la información financiera a través de tres fases de refinamiento:</p>
+                
+                <div style="overflow-x: auto; margin-top: 15px;">
+                    <table style="width: 100%; border-collapse: collapse; font-family: sans-serif; text-align: left;">
+                        <thead>
+                            <tr style="background-color: #f4f6f8; border-bottom: 2px solid #333;">
+                                <th style="padding: 12px; font-weight: bold; width: 20%;">Capa</th>
+                                <th style="padding: 12px; font-weight: bold; width: 25%;">Objetivo</th>
+                                <th style="padding: 12px; font-weight: bold;">Procesos Aplicados</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 12px;"><strong> Bronce</strong></td>
+                                <td style="padding: 12px;">Ingesta Cruda</td>
+                                <td style="padding: 12px;">Validación inicial de formatos estructurales y eliminación estricta de registros con nulos geográficos.</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e0e0e0;">
+                                <td style="padding: 12px;"><strong> Plata</strong></td>
+                                <td style="padding: 12px;">Limpieza y Casteo</td>
+                                <td style="padding: 12px;">Estandarización de textos y transformación de cadenas (strings con comillas/comas) a numéricos financieros precisos.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px;"><strong> Oro</strong></td>
+                                <td style="padding: 12px;">Modelado Analítico</td>
+                                <td style="padding: 12px;">Mapeo jerárquico por regiones naturales (Costa, Sierra, Oriente, Insular) y cálculo de KPIs como Liquidez Neta y Carga Fiscal Promedio.</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-            </article>
+            </div>
+        </article>
 
         <section class="card">
             <h3>Desarrollo del Análisis</h3>
@@ -199,6 +201,7 @@
                     </ul>
                 </figcaption>
             </article>
+
             <article class="grafico-bloque">
                 <h4 class="grafico-titulo">Gráfico 3: Composición Tributaria Nacional (Agrupación de Impuestos)</h4>
 
@@ -226,7 +229,7 @@
                         src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQY_RqtB20i9lsMm3_qNSmg8-qUYkpCLg2mEBwx634PUtoGGKwhgCkgoqMyFNQbWp2uLJX03kx28eN0/pubchart?oid=2115655321&format=interactive"
                         width="100%" height="650" frameborder="0" loading="lazy"
                         title="Gráfico circular de composición tributaria">
-                    </iframe>
+                    </iframe >
                 </div>
 
                 <figcaption class="caja-hallazgos">
@@ -240,7 +243,7 @@
                             (ISD) se posiciona como la tercera fuerza recaudatoria (6.0%, equivalente a $1,284.37 M),
                             superando incluso al Impuesto a los Consumos Especiales (ICE), que aporta un 3.5%.</li>
                         <li><strong>Baja incidencia de sanciones y rubros menores:</strong> Categorías como las Multas
-                            Tributarias ($55.29 M) y los Intereses Tributarios ($46.45 M) representan una fracción
+                            Tributarias ($55.29 M) and los Intereses Tributarios ($46.45 M) representan una fracción
                             marginal del pastel, indicando que el grueso de los ingresos proviene del cumplimiento
                             regular de los impuestos primarios y no de procesos punitivos.</li>
                     </ul>
@@ -314,10 +317,7 @@
                 </div>
             </article>
 
-            </div>
         </section>
-
-
 
     </main>
 </body>

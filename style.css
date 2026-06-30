@@ -172,9 +172,8 @@ main {
         min-height: 600px;
     }
 }
-/* SOLUCIÓN PARA DATA STUDIO 
-   Envoltorio con scroll en lugar de ratio estricto
-*/
+
+/* SOLUCIÓN PARA DATA STUDIO */
 .scrollable-wrapper {
     width: 100%;
     overflow-x: auto; /* Permite scroll horizontal en móviles sin romper el gráfico */
@@ -212,9 +211,7 @@ main {
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-/* =========================================
-   CONTENEDOR ESPECÍFICO PARA GOOGLE SHEETS
-   ========================================= */
+/* Contenedor de Google Sheets */
 .sheets-wrapper {
     display: flex;
     justify-content: center;
@@ -223,124 +220,23 @@ main {
     background-color: #FAFAFA;
     border-radius: 8px;
     border: 1px solid #EAE0D5;
-    overflow-x: auto; /* Permite scroll horizontal en móviles */
+    overflow-x: auto;
 }
 
 .sheets-wrapper iframe {
-    width: 650px; /* Ancho fijo para que el gráfico no se corte */
-    height: 400px; /* Alto fijo */
+    width: 650px; 
+    height: 400px; 
     border: none;
     max-width: 100%;
 }
 
-
-/* ==========================================================================
-   BLOQUE DE OPTIMIZACIÓN PARA EXPORTACIÓN A PDF (No afecta a la navegación web)
-   ========================================================================== */
-@media print {
-    /* 1. Ajustes del cuerpo general para el PDF */
-    body {
-        background-color: #FFFFFF !important;
-        color: #000000 !important;
-        font-size: 11pt;
-    }
-
-    main {
-        margin: 1rem auto !important;
-        padding: 0 !important;
-        max-width: 100% !important;
-    }
-
-
-
-    /* 3. Prevenir cortes feos de páginas a la mitad de una gráfica o tarjeta */
-    .card, .chart-container, .iframe-wrapper, .scrollable-wrapper, .sheets-wrapper {
-        page-break-inside: avoid !important;
-        break-inside: avoid !important;
-        box-shadow: none !important;
-        background: #FFFFFF !important;
-    }
-
-    /* 4. PROTECCIÓN DE TUS IMÁGENES: Asegura que V1, V2, V3 y V4 escalen y no se rompan */
-    img, .responsive-img {
-        max-width: 100% !important;
-        height: auto !important;
-        display: block !important;
-        page-break-inside: avoid !important;
-    }
-
-    /* 5. Ajuste para iframes con altura absoluta (Evita que salgan planos o vacíos) */
-    .iframe-wrapper {
-        padding-top: 0 !important;
-        height: 480px !important; /* Altura física fija reservada en el PDF */
-    }
-
-    .iframe-wrapper iframe {
-        position: relative !important;
-        height: 100% !important;
-        width: 100% !important;
-    }
-
-    /* 6. SOLUCIÓN PARA LA ÚLTIMA GRÁFICA (Data Studio / Dashboard Animado) */
-    .scrollable-wrapper {
-        overflow: visible !important; /* Quita las barras de scroll en el PDF */
-        border: none !important;
-        padding: 0 !important;
-    }
-
-    .scrollable-wrapper iframe {
-        width: 100% !important;
-        height: 950px !important; /* Forzar altura suficiente para capturar todo el cuadro */
-    }
-
-    .sheets-wrapper iframe {
-        width: 100% !important; /* Se adapta por completo al ancho del papel */
-    }
-    .grafico-container {
-    margin: 40px 0;
-    padding: 20px;
-    background: #fafafa;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-}
-
-.grafico-container h4 {
-    margin-top: 0;
-    color: #1a1a2e;
-    font-size: 1.2rem;
-}
-
-.justificacion {
-    background: #fff;
-    border-left: 4px solid #2563eb;
-    padding: 12px 16px;
-    margin-bottom: 16px;
-    font-size: 0.95rem;
-    color: #333;
-}
-
-.iframe-wrapper {
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    overflow: hidden;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-}
-
-.notas-lectura {
-    margin-top: 12px;
-    font-size: 0.88rem;
-    color: #555;
-}
-}
-
-/* Espaciado del texto introductorio */
+/* Elementos de la sección de gráficos en web */
 .texto-introductorio {
     font-size: 1.05em;
     color: #444;
     margin-bottom: 20px;
 }
 
-/* Separador principal antes de empezar con los gráficos */
 .separador-seccion {
     border: 0;
     height: 2px;
@@ -348,29 +244,25 @@ main {
     margin: 30px 0;
 }
 
-/* Contenedor principal de cada gráfico */
 .grafico-bloque {
     margin-bottom: 60px; /* Mucho espacio entre gráficos distintos */
     padding-bottom: 30px;
     border-bottom: 1px dashed #cbd5e1; /* Línea sutil para separar gráficos */
 }
 
-/* Quitar la línea punteada del último gráfico */
 .grafico-bloque:last-child {
     border-bottom: none;
     margin-bottom: 0;
 }
 
-/* Título de cada gráfico */
 .grafico-titulo {
     color: #1e293b;
     font-size: 1.3em;
     margin-bottom: 20px;
-    border-left: 4px solid #3b82f6; /* Acento de color al lado del título */
+    border-left: 4px solid #3b82f6; 
     padding-left: 10px;
 }
 
-/* Caja de contexto (fondo gris/azul claro para separarlo del resto) */
 .caja-informacion {
     background-color: #f8fafc;
     border: 1px solid #e2e8f0;
@@ -386,7 +278,6 @@ main {
     margin-bottom: 12px;
 }
 
-/* Estilo para resaltar la nota de interactividad */
 .interactividad-nota {
     background-color: #e0f2fe; /* Azul muy pálido */
     padding: 10px 15px;
@@ -396,7 +287,6 @@ main {
     font-size: 0.95em;
 }
 
-/* Caja de hallazgos debajo del gráfico */
 .caja-hallazgos {
     display: block;
     background-color: #ffffff;
@@ -408,4 +298,154 @@ main {
 
 .caja-hallazgos ul {
     margin-bottom: 0;
+}
+
+/* ==========================================================================
+   BLOQUE DE OPTIMIZACIÓN CRÍTICA PARA EXPORTACIÓN A PDF (A4 / Reporte)
+   ========================================================================== */
+@media print {
+    html, body {
+        background-color: #FFFFFF !important;
+        color: #000000 !important;
+        font-family: 'Segoe UI', Arial, sans-serif !important;
+        font-size: 10.5pt !important;
+        line-height: 1.5 !important;
+        -webkit-print-color-adjust: exact; 
+        print-color-adjust: exact;
+    }
+
+    main {
+        margin: 0 !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+        display: block !important; 
+    }
+
+    /* Ocultar componentes interactivos o web irrelevantes en PDF */
+    .navbar, 
+    .interactividad-nota,
+    .separador-seccion { 
+        display: none !important; 
+    }
+
+    /* Rediseño limpio del Header formal */
+    header {
+        padding: 1.5rem 0 !important;
+        border-bottom: 2px solid #D46A43 !important;
+        background: none !important;
+        box-shadow: none !important;
+        text-align: left !important;
+    }
+
+    header h1 {
+        font-size: 18pt !important;
+        color: #2C2420 !important;
+        text-transform: none !important;
+        letter-spacing: 0 !important;
+    }
+
+    header h2 {
+        font-size: 11pt !important;
+        color: #555555 !important;
+        margin-top: 5px !important;
+    }
+
+    /* Enlaces transformados en metadatos limpios */
+    .card.info-trabajo {
+        margin-bottom: 15px !important;
+        padding: 12px !important;
+        border: 1px solid #E2E8F0 !important;
+    }
+
+    .header-links {
+        justify-content: flex-start !important;
+        gap: 8px !important;
+    }
+
+    .btn {
+        background: #F8FAFC !important;
+        color: #4A403A !important;
+        border: 1px solid #CBD5E1 !important;
+        padding: 4px 10px !important;
+        font-size: 8.5pt !important;
+        border-radius: 4px !important;
+        box-shadow: none !important;
+    }
+
+    /* Control de Paginación */
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+        color: #2C2420 !important;
+    }
+
+    .card, .grafico-bloque {
+        background: #ffffff !important;
+        border: none !important;
+        padding: 0 !important;
+        margin-bottom: 25px !important;
+        box-shadow: none !important;
+        page-break-inside: auto !important;
+    }
+
+    .caja-informacion, 
+    .caja-hallazgos, 
+    table, 
+    tr {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+    .caja-informacion {
+        background-color: #F8FAFC !important;
+        border: 1px solid #E2E8F0 !important;
+        padding: 15px !important;
+    }
+
+    .caja-hallazgos {
+        background-color: #FFFFFF !important;
+        border: 1px solid #E2E8F0 !important;
+        border-left: 4px solid #10B981 !important; 
+        padding: 15px !important;
+    }
+
+    .grafico-titulo {
+        border-left: 4px solid #D46A43 !important; 
+        font-size: 12pt !important;
+        margin-top: 20px !important;
+        margin-bottom: 10px !important;
+    }
+
+    /* Ajuste dimensional seguro para iframes en A4 vertical */
+    .iframe-wrapper {
+        height: 480px !important; 
+        min-height: 480px !important;
+        border: 1px solid #CBD5E1 !important;
+        background-color: #FAFAFA !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+    .iframe-wrapper iframe {
+        height: 100% !important;
+        width: 100% !important;
+    }
+
+    .iframe-wrapper.plotly-chart {
+        height: 500px !important; 
+    }
+    
+    .iframe-wrapper.plotly-chart iframe {
+        min-height: 100% !important;
+    }
+
+    table {
+        width: 100% !important;
+        font-size: 9.5pt !important;
+    }
+    
+    th {
+        background-color: #F4F6F8 !important;
+        color: #000000 !important;
+    }
 }
