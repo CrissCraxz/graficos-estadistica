@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio de Visualización de Datos | Portafolio</title>
+    <title>Portafolio de Visualización de Datos | Análisis SRI</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
-        <h1>Análisis y Visualización de Datos - 08MBID </h1>
+    <header class="main-header">
+        <h1>Análisis y Visualización de Datos - 08MBID</h1>
         <h2>Christian Michael Obando Garcés | Máster en Big Data y Ciencia de Datos</h2>
     </header>
 
@@ -19,88 +19,306 @@
         <a href="actividad_practico.html" class="nav-btn active">Actividad de Trabajo Práctico</a>
     </nav>
 
-    <main>
-        <section class="card">
+    <main class="contenedor-principal">
+
+        <section class="card info-trabajo">
             <div class="header-links">
                 <a href="https://drive.google.com/drive/folders/17CFAjoouW-DShZfCJzG9A6Z-I8i_fBFH?usp=sharing"
-                    target="_blank" class="btn">Mi URL de la Fuente de los datos SRI</a>
+                    target="_blank" rel="noopener noreferrer" class="btn">Fuente de los datos</a>
                 <a href="https://colab.research.google.com/drive/1Fh-Ni57J78DvrUhvddmASP1kfzGwmYBn?usp=sharing"
-                    target="_blank" class="btn">Mi URL de Google Colab del ETL</a>
-                <a href="https://docs.google.com/spreadsheets/d/1rDxRwmltPi5MkI-hgi7DYaY676qztPQnFKesgWMkZZU/edit?usp=sharing"
-                    target="_blank" class="btn">Mi URL de Google Sheet</a>
+                    target="_blank" rel="noopener noreferrer" class="btn">Google Colab (ETL)</a>
+                <a href="https://docs.google.com/spreadsheets/d/1BrErKkG9BslvOXlVyyeQCOgwjet3-tStqyTUBhxGzoQ/edit?usp=sharing"
+                    target="_blank" rel="noopener noreferrer" class="btn">Gráfico de Impuestos</a>
+                <a href="https://docs.google.com/spreadsheets/d/1ZlG119VCPoTqmqW6pkkSaoh3hop4pyWnKFWNAb4Bm5k/edit?usp=sharing"
+                    target="_blank" rel="noopener noreferrer" class="btn">Gráfico de Tendencias</a>
             </div>
         </section>
 
-        <section class="tab-content active">
-            <div class="card">
-                <h3>Introducción </h3>
-                Herramientas: Python (Plotly) y Google Sheets
-                Fuente de los datos: Archivos Abiertos del Servicio de Rentas Internas (SRI)
-                <ul>
-                    Este trabajo presenta un análisis visual de los registros del Servicio de Rentas Internas (SRI) del
-                    Ecuador para el periodo reciente. El objetivo principal es responder a la siguiente pregunta: ¿Cómo
-                    afectó la presión fiscal a la liquidez empresarial en las distintas regiones del Ecuador, y es el
-                    volumen de ventas sinónimo de liquidez real?
-                    Tradicionalmente se asume que las provincias que facturan más son aquellas que gozan de mayor salud
-                    económica (liquidez). Sin embargo,
-                    ¿qué papel juega el volumen de compras y las obligaciones fiscales impuestas por el Estado? Este
+        <section class="card">
+            <h3>Introducción</h3>
+            <p><strong>Herramientas:</strong> Python (Plotly) y Google Sheets</p>
+            <p><strong>Fuente de los datos:</strong> Archivos Abiertos del Servicio de Rentas Internas (SRI)</p>
+            <ul>
+                <li>Este trabajo presenta un análisis visual de los registros del Servicio de Rentas Internas (SRI) del
+                    Ecuador. El objetivo principal es responder: <strong>¿Cómo afectó la presión fiscal a la liquidez
+                        empresarial en las distintas regiones del Ecuador, y es el volumen de ventas sinónimo de
+                        liquidez o eficiencia recaudatoria real?</strong></li>
+                <li>Tradicionalmente se asume que las provincias que facturan más gozan de mayor salud económica. Este
                     análisis busca revelar si el dinero recaudado absorbe desproporcionadamente la liquidez según la
-                    región.
-                </ul>
-                <h3>Objetivos</h3>
-                <ul>
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit, dictumst sagittis non suscipit justo
-                    himenaeos morbi, inceptos faucibus hendrerit tellus pharetra conubia. Aenean primis nunc congue
-                    pretium ornare vestibulum vehicula neque elementum, dapibus lacus eu maecenas torquent nostra luctus
-                    massa himenaeos praesent, suscipit purus auctor erat malesuada porttitor lectus nec. Et dictumst
-                    curae quisque arcu etiam ullamcorper, facilisis egestas nam dui phasellus nascetur ut, ac lacinia
-                    risus blandit dictum.
-                    Natoque in habitant inceptos litora hendrerit pharetra habitasse, sodales vulputate porta vehicula
-                    sollicitudin. Eleifend purus netus faucibus leo varius pharetra pulvinar in, aliquet potenti
-                    vestibulum enim sem donec cras integer urna, iaculis convallis dictumst consequat porta ante nisi.
-                    Natoque laoreet bibendum donec posuere tellus hendrerit mollis, parturient netus porttitor arcu
-                    rutrum dignissim.
-                </ul>
-            </div>
+                    región y la naturaleza de su sector económico.</li>
+            </ul>
+
+            <h3>Objetivos</h3>
+            <ul>
+                <li><strong>Objetivo Principal:</strong> Analizar la relación empírica entre el volumen de ventas brutas
+                    y la recaudación fiscal efectiva en los cantones del Ecuador, identificando la verdadera estructura
+                    tributaria del país.</li>
+                <li><strong>Objetivos Específicos:</strong>
+                    <ul>
+                        <li>Identificar la concentración geográfica de la riqueza a nivel provincial (Google Sheets).
+                        </li>
+                        <li>Analizar la distribución estadística de la presión fiscal por regiones naturales, detectando
+                            anomalías (Plotly).</li>
+                        <li>Desglosar jerárquicamente qué grupos asumen la mayor carga del sistema impositivo (Plotly).
+                        </li>
+                        <li>Evaluar la eficiencia recaudatoria cantonal contrastando ventas frente a impuestos (Plotly).
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </section>
-        <section class="tab-content">
-            <div class="card">
-                <h3>Descripción de los datos </h3>
-                <ul>
-                    Se emplearon dos conjuntos de datos extraídos directamente de los repositorios de datos abiertos del
-                    SRI: el historial de Ventas y el de Recaudación. Para asegurar la calidad de los datos, se aplicó
-                    una arquitectura de procesamiento en capas (Medallón):
-                    Capa Bronce: Ingesta cruda de datos, validando formatos de archivos y eliminando registros
-                    geográficos nulos.
-                    Capa Plata: Estandarización de textos (provincias/cantones) y transformación de cadenas de texto a
-                    formatos numéricos financieros.
-                    Capa Oro: Agregación agrupando por regiones naturales (Costa, Sierra, Oriente, Insular) y cálculo de
-                    nuevos indicadores como la Liquidez Neta (Ventas - Compras) y la Carga Fiscal Promedio (Porcentaje
-                    de las ventas destinado a impuestos).
-                </ul>
-            </div>
-        </section>
-        <section class="tab-content">
-            <div class="card">
-                <h3>Desarrollo del analisis </h3>
-                <ul>
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit, dictumst sagittis non suscipit justo
-                    himenaeos morbi, inceptos faucibus hendrerit tellus pharetra conubia. Aenean primis nunc congue
-                    pretium ornare vestibulum vehicula neque elementum, dapibus lacus eu maecenas torquent nostra luctus
-                    massa himenaeos praesent, suscipit purus auctor erat malesuada porttitor lectus nec. Et dictumst
-                    curae quisque arcu etiam ullamcorper, facilisis egestas nam dui phasellus nascetur ut, ac lacinia
-                    risus blandit dictum.
-                    Natoque in habitant inceptos litora hendrerit pharetra habitasse, sodales vulputate porta vehicula
-                    sollicitudin. Eleifend purus netus faucibus leo varius pharetra pulvinar in, aliquet potenti
-                    vestibulum enim sem donec cras integer urna, iaculis convallis dictumst consequat porta ante nisi.
-                    Natoque laoreet bibendum donec posuere tellus hendrerit mollis, parturient netus porttitor arcu
-                    rutrum dignissim.
-                </ul>
+
+<article class="grafico-bloque">
+                <h4 class="grafico-titulo">Descripción de los Datos y Arquitectura</h4>
+                <div class="caja-informacion">
+                    <p>Para este análisis se procesaron los conjuntos de datos abiertos del SRI (Ventas y Recaudación). Se implementó un pipeline de datos basado en la <strong>Arquitectura Medallón</strong>, garantizando la calidad y trazabilidad de la información financiera a través de tres fases de refinamiento:</p>
+                    
+                    <div style="overflow-x: auto; margin-top: 15px;">
+                        <table style="width: 100%; border-collapse: collapse; font-family: sans-serif; text-align: left;">
+                            <thead>
+                                <tr style="background-color: #f4f6f8; border-bottom: 2px solid #333;">
+                                    <th style="padding: 12px; font-weight: bold; width: 20%;">Capa</th>
+                                    <th style="padding: 12px; font-weight: bold; width: 25%;">Objetivo</th>
+                                    <th style="padding: 12px; font-weight: bold;">Procesos Aplicados</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid #e0e0e0;">
+                                    <td style="padding: 12px;"><strong> Bronce</strong></td>
+                                    <td style="padding: 12px;">Ingesta Cruda</td>
+                                    <td style="padding: 12px;">Validación inicial de formatos estructurales y eliminación estricta de registros con nulos geográficos.</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #e0e0e0;">
+                                    <td style="padding: 12px;"><strong> Plata</strong></td>
+                                    <td style="padding: 12px;">Limpieza y Casteo</td>
+                                    <td style="padding: 12px;">Estandarización de textos y transformación de cadenas (strings con comillas/comas) a numéricos financieros precisos.</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px;"><strong> Oro</strong></td>
+                                    <td style="padding: 12px;">Modelado Analítico</td>
+                                    <td style="padding: 12px;">Mapeo jerárquico por regiones naturales (Costa, Sierra, Oriente, Insular) y cálculo de KPIs como Liquidez Neta y Carga Fiscal Promedio.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </article>
+
+        <section class="card">
+            <h3>Desarrollo del Análisis</h3>
+            <p class="texto-introductorio">El recorrido visual analítico va desde una perspectiva macro (geografía
+                nacional) hasta una micro (eficiencia cantonal), utilizando visualizaciones interactivas para soportar
+                grandes volúmenes de datos consolidados.</p>
+
+            <hr class="separador-seccion">
+
+            <article class="grafico-bloque">
+                <h4 class="grafico-titulo">Gráfico 1: Treemap — Ventas vs Presión Fiscal por Región</h4>
+
+                <div class="caja-informacion">
+                    <h5>Justificación y Lectura del Gráfico</h5>
+                    <p>Se eligió un treemap jerárquico (Región → Provincia → Cantón) porque permite procesar cientos de
+                        categorías geográficas simultáneamente a través de dos dimensiones visuales:</p>
+                    <ul>
+                        <li><strong>Tamaño del bloque:</strong> Representa el volumen de ventas brutas. Bloques más
+                            grandes equivalen a mayor actividad comercial.</li>
+                        <li><strong>Color del bloque:</strong> Representa la presión fiscal en una escala de azules. Un
+                            azul claro indica una carga tributaria baja (ej. cercana al 0-5%), mientras que un azul
+                            oscuro profundo advierte una carga alta (acercándose al límite superior del 20%).</li>
+                    </ul>
+                    <p class="interactividad-nota"><strong>Interactividad:</strong> Dado el volumen de datos, el gráfico
+                        está diseñado para ser explorado. El usuario puede hacer clic en cualquier región o provincia
+                        para profundizar (Drill-down) y aislar territorios específicos. Al pasar el cursor sobre
+                        cualquier cantón, se despliega el detalle exacto de Ventas, Presión Fiscal (%) y el total
+                        Recaudado en millones.</p>
+                </div>
+
+                <div class="iframe-wrapper plotly-chart">
+                    <iframe src="graficos/grafico_treemap_optimizado.html" width="100%" height="1000" frameborder="0"
+                        loading="lazy" title="Treemap interactivo de ventas y presión fiscal"></iframe>
+                </div>
+
+                <figcaption class="caja-hallazgos">
+                    <h5>Hallazgos Clave</h5>
+                    <ul>
+                        <li><strong>El Motor Comercial:</strong> La Costa y la Sierra concentran la inmensa mayoría del
+                            volumen de ventas. Urbes como Guayaquil (con casi $70 mil millones en ventas) mantienen una
+                            presión fiscal moderada-baja (8.12%), indicando una recaudación impulsada por el volumen
+                            puro de transacciones comerciales.</li>
+                        <li><strong>La Realidad Extractivista:</strong> El hallazgo visual más impactante está en el
+                            Oriente. Cantones como Yantzaza y El Pangui (Zamora Chinchipe) presentan áreas comerciales
+                            menores, pero destacan con el azul más oscuro. Esto revela la fuerte realidad del Ecuador
+                            como país minero y petrolero: el sector extractivo soporta impuestos y regalías tan altos
+                            que compiten en relevancia de recaudación con los polos comerciales más grandes.</li>
+                    </ul>
+                </figcaption>
+            </article>
+
+            <article class="grafico-bloque">
+                <h4 class="grafico-titulo">Gráfico 2: Balanza Comercial por Provincia (en Millones USD)</h4>
+
+                <div class="caja-informacion">
+                    <h5>Justificación y Lectura del Gráfico</h5>
+                    <p>Este mapa geográfico evalúa la dinámica del comercio exterior a nivel provincial. Permite
+                        identificar de manera visual y rápida qué regiones inyectan divisas a la economía nacional y
+                        cuáles tienen un perfil predominantemente importador.</p>
+                    <ul>
+                        <li><strong>Tamaño de la burbuja:</strong> Representa la actividad comercial internacional total
+                            (Exportaciones + Importaciones). Burbujas más grandes indican una mayor participación en el
+                            mercado exterior.</li>
+                        <li><strong>Color (Escala Divergente):</strong> Refleja el estado financiero de la balanza. Los
+                            tonos verdes indican un <strong>superávit</strong> (las exportaciones superan a las
+                            importaciones), mientras que los tonos cálidos como el naranja y el rojo advierten sobre un
+                            <strong>déficit</strong> (las importaciones superan a las exportaciones).
+                        </li>
+                    </ul>
+                    <p class="interactividad-nota"><strong>Interactividad:</strong> Al posicionar el cursor sobre cada
+                        burbuja (hover), se despliega una ventana emergente con el desglose exacto de exportaciones,
+                        importaciones y la balanza comercial en millones de dólares. El lienzo permite acercamiento
+                        (zoom) y desplazamiento panorámico para aislar regiones específicas.</p>
+                </div>
+
+                <div class="iframe-wrapper plotly-chart">
+                    <iframe src="graficos/grafico_mapa.html" width="100%" height="800" frameborder="0" loading="lazy"
+                        title="Mapa interactivo de balanza comercial del Ecuador"></iframe>
+                </div>
+
+                <figcaption class="caja-hallazgos">
+                    <h5>Hallazgos Clave</h5>
+                    <ul>
+                        <li><strong>El motor de la Costa:</strong> Guayas destaca tanto por su volumen absoluto como por
+                            su eficiencia neta, liderando el país con un superávit masivo de $5,624.11 millones.</li>
+                        <li><strong>Perfil importador en la Sierra:</strong> Pichincha y Azuay evidencian una balanza
+                            negativa (-$1,388.79 millones y -$1,411.72 millones, respectivamente). Sus importaciones
+                            superan ampliamente sus exportaciones, marcando una clara tendencia hacia el consumo interno
+                            o la importación de insumos.</li>
+                        <li><strong>El peso extractivo del Oriente:</strong> Zamora Chinchipe presenta un superávit
+                            extraordinario y altamente eficiente de $3,294.15 millones. La provincia sostiene $3,450.60
+                            millones en exportaciones con apenas $156.46 millones en importaciones, lo que refleja el
+                            fuerte impacto de los sectores primarios (minería) en la región.</li>
+                    </ul>
+                </figcaption>
+            </article>
+            <article class="grafico-bloque">
+                <h4 class="grafico-titulo">Gráfico 3: Composición Tributaria Nacional (Agrupación de Impuestos)</h4>
+
+                <div class="caja-informacion">
+                    <h5>Justificación y Lectura del Gráfico</h5>
+                    <p>Este gráfico circular (pastel) detalla la estructura de los ingresos del Estado, mostrando el
+                        peso relativo que tiene cada grupo de impuestos sobre la recaudación total a nivel nacional.
+                        Permite identificar de forma inmediata la dependencia estatal hacia ciertos tributos
+                        específicos.</p>
+                    <ul>
+                        <li><strong>Tamaño de la porción (Rebanada):</strong> Representa el volumen de recaudación. A
+                            mayor amplitud del ángulo, mayor es la cantidad de millones de dólares que ese impuesto
+                            aporta a las arcas fiscales.</li>
+                        <li><strong>Etiquetas y Colores:</strong> Cada color distingue un grupo impositivo diferente.
+                            Las etiquetas externas facilitan la lectura directa del porcentaje exacto que representa
+                            cada tributo frente al 100% nacional.</li>
+                    </ul>
+                    <p class="interactividad-nota"><strong>Interactividad:</strong> Al posicionar el cursor sobre
+                        cualquier porción del gráfico, se desplegará el valor absoluto (en millones de dólares)
+                        correspondiente a ese impuesto, además de su participación porcentual.</p>
+                </div>
+
+                <div class="iframe-wrapper plotly-chart">
+                    <iframe
+                        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQY_RqtB20i9lsMm3_qNSmg8-qUYkpCLg2mEBwx634PUtoGGKwhgCkgoqMyFNQbWp2uLJX03kx28eN0/pubchart?oid=2115655321&format=interactive"
+                        width="100%" height="650" frameborder="0" loading="lazy"
+                        title="Gráfico circular de composición tributaria">
+                    </iframe>
+                </div>
+
+                <figcaption class="caja-hallazgos">
+                    <h5>Hallazgos Clave</h5>
+                    <ul>
+                        <li><strong>Alta Concentración en el Consumo y la Renta:</strong> El sistema tributario
+                            ecuatoriano depende casi por completo de dos grandes pilares: el Impuesto al Valor Agregado
+                            (IVA) con un contundente 51.7% ($11,077.76 M) y el Impuesto a la Renta Global con el 31.6%
+                            ($6,766.61 M). Juntos, financian más del 83% del total nacional.</li>
+                        <li><strong>El peso de los tributos de control:</strong> El Impuesto a la Salida de Divisas
+                            (ISD) se posiciona como la tercera fuerza recaudatoria (6.0%, equivalente a $1,284.37 M),
+                            superando incluso al Impuesto a los Consumos Especiales (ICE), que aporta un 3.5%.</li>
+                        <li><strong>Baja incidencia de sanciones y rubros menores:</strong> Categorías como las Multas
+                            Tributarias ($55.29 M) y los Intereses Tributarios ($46.45 M) representan una fracción
+                            marginal del pastel, indicando que el grueso de los ingresos proviene del cumplimiento
+                            regular de los impuestos primarios y no de procesos punitivos.</li>
+                    </ul>
+                </figcaption>
+            </article>
+
+            <article class="grafico-bloque">
+                <h4 class="grafico-titulo">Gráfico 4: Evolución de Ventas vs. Recaudación (en Millones USD)</h4>
+
+                <div class="caja-informacion">
+                    <h5>Justificación y Lectura del Gráfico</h5>
+                    <p>Este gráfico combinado de doble eje contrasta de manera directa la actividad comercial del país
+                        frente a los ingresos efectivos del Estado a lo largo del año.</p>
+                    <ul>
+                        <li><strong>Barras Azules (Ventas):</strong> Representan el volumen total de ventas mensuales
+                            (eje derecho). Permiten identificar claramente la estacionalidad del comercio y los picos de
+                            consumo masivo.</li>
+                        <li><strong>Línea Roja (Recaudación):</strong> Muestra el valor real de los impuestos cobrados
+                            en el mismo periodo (eje izquierdo). Su trayectoria ayuda a evaluar si los ingresos
+                            tributarios crecen proporcionalmente al dinamismo económico del mercado.</li>
+                    </ul>
+                    <p class="interactividad-nota"><strong>Interactividad:</strong> Al posicionar el cursor sobre
+                        cualquier mes, se desplegarán simultáneamente los valores exactos en millones de dólares tanto
+                        para las ventas como para la recaudación, facilitando su comparación directa.</p>
+                </div>
+
+                <div class="iframe-wrapper plotly-chart">
+                    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSEDAXpgFWTPuEFh1G5gjYBpOdW67as7VQyS3RybpDd4q15kP-in1rJIlt7QdcyELYuOKMDhQU6AQOg/pubchart?oid=1173250017&format=interactive" width="100%" height="650" frameborder="0" loading="lazy"
+                        title="Gráfico combinado de ventas y recaudación mensual">
+                    </iframe>
+                </div>
+
+                <figcaption class="caja-hallazgos">
+                    <h5>Hallazgos Clave</h5>
+                    <ul>
+                        <li><strong>El fenómeno tributario de Abril:</strong> Abril registra el pico máximo de
+                            recaudación del año ($2,233.34 M) pese a que sus ventas ($20,452.59 M) se mantienen en el
+                            promedio anual. Esto evidencia el fuerte impacto del calendario tributario, coincidiendo con
+                            la declaración y pago del Impuesto a la Renta de sociedades.</li>
+                        <li><strong>Desconexión estacional en Diciembre y Junio:</strong> Existen saltos transaccionales
+                            masivos que no se reflejan inmediatamente en la recaudación. En diciembre, las ventas se
+                            disparan a un récord de $33,520.71 M por la época navideña, pero la recaudación ($1,937.37
+                            M) apenas sufre una leve variación. Un fenómeno similar ocurre en junio, con ventas
+                            superiores a los $26,000 M y una recaudación plana de $1,599.22 M.</li>
+                        <li><strong>Suelo de recaudación constante:</strong> Más allá de las fluctuaciones comerciales,
+                            el Estado mantiene un "piso" sólido de ingresos impositivos, logrando no bajar de la barrera
+                            de los ~$1,600 M mensuales (a excepción de febrero, el mes más corto y de menor recaudación
+                            con $1,370.26 M).</li>
+                    </ul>
+                </figcaption>
+            </article>
+
+            <article class="grafico-bloque">
+                <h4 class="grafico-titulo">Conclusión General del Análisis</h4>
+
+                <div class="caja-informacion">
+                    <h5>Síntesis del Proceso Metodológico</h5>
+                    <p>Se ejecutó un ecosistema analítico completo partiendo de archivos transaccionales en bruto, escalando hacia Data Marts optimizados. El uso combinado de Python para la agregación pesada de datos y corrección matemática (evitando distorsiones como la falacia del promedio de porcentajes) y herramientas ágiles para el despliegue de tableros, permitió construir visualizaciones precisas, dinámicas y de alta confiabilidad.</p>
+
+                    <h5>Revisión de Objetivos y Hallazgos</h5>
+                    <p>El análisis empírico cumplió con éxito el objetivo principal al demostrar que <strong>el volumen de ventas brutas no es un sinónimo directo de liquidez ni garantiza una eficiencia recaudatoria lineal.</strong> Los datos revelan una estructura económica con particularidades muy marcadas:</p>
+                    
+                    <ul>
+                        <li><strong>Disparidad en la concentración de la riqueza:</strong> Mientras polos urbanos como Guayaquil y Quito manejan volúmenes masivos de facturación (decenas de miles de millones), la presión fiscal varía considerablemente según el tejido empresarial de cada cantón. Asimismo, provincias del Oriente demostraron perfiles altamente atípicos, logrando balanzas comerciales extraordinariamente eficientes gracias a la inyección de divisas por sectores extractivos, operando bajo lógicas totalmente distintas a las de la Costa o la Sierra.</li>
+                        <li><strong>La latencia del calendario fiscal:</strong> La evaluación temporal desmintió la idea de que la recaudación absorbe la liquidez del mercado en tiempo real. Se comprobó que el Estado recauda su pico máximo en abril (anclado al Impuesto a la Renta), mientras que picos históricos de liquidez y consumo, como el mes de diciembre, apenas generan un impacto inmediato en las arcas públicas.</li>
+                        <li><strong>Estructura sostenida por el consumo:</strong> El desglose jerárquico evidenció que el sistema impositivo se recarga desproporcionadamente sobre el consumidor final (IVA) y las grandes sociedades tributarias, confirmando quiénes asumen la mayor carga del sistema.</li>
+                    </ul>
+
+                    <h5>Reflexión Final</h5>
+                    <p>La riqueza de las provincias del Ecuador no puede medirse únicamente por sus ingresos brutos. La verdadera liquidez empresarial está condicionada por un ecosistema tributario que actúa con desfases temporales y presiona de forma asimétrica dependiendo de la región y el sector productivo. Este modelo de monitoreo analítico sienta bases sólidas para entender el estado financiero real del país más allá de los indicadores transaccionales básicos.</p>
+                </div>
+            </article>
+
             </div>
         </section>
 
 
-        </section>
+
     </main>
 </body>
 
