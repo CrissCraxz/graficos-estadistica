@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio de Visualización de Datos | Portafolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1>Análisis y Visualización de Datos - 08MBID </h1>
@@ -18,10 +20,88 @@
     </nav>
 
     <main>
+        <section class="card">
+            <div class="header-links">
+                <a href="https://drive.google.com/drive/folders/17CFAjoouW-DShZfCJzG9A6Z-I8i_fBFH?usp=sharing"
+                    target="_blank" class="btn">Mi URL de la Fuente de los datos SRI</a>
+                <a href="https://colab.research.google.com/drive/1Fh-Ni57J78DvrUhvddmASP1kfzGwmYBn?usp=sharing"
+                    target="_blank" class="btn">Mi URL de Google Colab del ETL</a>
+                <a href="https://docs.google.com/spreadsheets/d/1rDxRwmltPi5MkI-hgi7DYaY676qztPQnFKesgWMkZZU/edit?usp=sharing"
+                    target="_blank" class="btn">Mi URL de Google Sheet</a>
+            </div>
+        </section>
+
         <section class="tab-content active">
             <div class="card">
+                <h3>Introducción </h3>
+                Herramientas: Python (Plotly) y Google Sheets
+                Fuente de los datos: Archivos Abiertos del Servicio de Rentas Internas (SRI)
+                <ul>
+                    Este trabajo presenta un análisis visual de los registros del Servicio de Rentas Internas (SRI) del
+                    Ecuador para el periodo reciente. El objetivo principal es responder a la siguiente pregunta: ¿Cómo
+                    afectó la presión fiscal a la liquidez empresarial en las distintas regiones del Ecuador, y es el
+                    volumen de ventas sinónimo de liquidez real?
+                    Tradicionalmente se asume que las provincias que facturan más son aquellas que gozan de mayor salud
+                    económica (liquidez). Sin embargo,
+                    ¿qué papel juega el volumen de compras y las obligaciones fiscales impuestas por el Estado? Este
+                    análisis busca revelar si el dinero recaudado absorbe desproporcionadamente la liquidez según la
+                    región.
+                </ul>
+                <h3>Objetivos</h3>
+                <ul>
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit, dictumst sagittis non suscipit justo
+                    himenaeos morbi, inceptos faucibus hendrerit tellus pharetra conubia. Aenean primis nunc congue
+                    pretium ornare vestibulum vehicula neque elementum, dapibus lacus eu maecenas torquent nostra luctus
+                    massa himenaeos praesent, suscipit purus auctor erat malesuada porttitor lectus nec. Et dictumst
+                    curae quisque arcu etiam ullamcorper, facilisis egestas nam dui phasellus nascetur ut, ac lacinia
+                    risus blandit dictum.
+                    Natoque in habitant inceptos litora hendrerit pharetra habitasse, sodales vulputate porta vehicula
+                    sollicitudin. Eleifend purus netus faucibus leo varius pharetra pulvinar in, aliquet potenti
+                    vestibulum enim sem donec cras integer urna, iaculis convallis dictumst consequat porta ante nisi.
+                    Natoque laoreet bibendum donec posuere tellus hendrerit mollis, parturient netus porttitor arcu
+                    rutrum dignissim.
+                </ul>
             </div>
+        </section>
+        <section class="tab-content">
+            <div class="card">
+                <h3>Descripción de los datos </h3>
+                <ul>
+                    Se emplearon dos conjuntos de datos extraídos directamente de los repositorios de datos abiertos del
+                    SRI: el historial de Ventas y el de Recaudación. Para asegurar la calidad de los datos, se aplicó
+                    una arquitectura de procesamiento en capas (Medallón):
+                    Capa Bronce: Ingesta cruda de datos, validando formatos de archivos y eliminando registros
+                    geográficos nulos.
+                    Capa Plata: Estandarización de textos (provincias/cantones) y transformación de cadenas de texto a
+                    formatos numéricos financieros.
+                    Capa Oro: Agregación agrupando por regiones naturales (Costa, Sierra, Oriente, Insular) y cálculo de
+                    nuevos indicadores como la Liquidez Neta (Ventas - Compras) y la Carga Fiscal Promedio (Porcentaje
+                    de las ventas destinado a impuestos).
+                </ul>
+            </div>
+        </section>
+        <section class="tab-content">
+            <div class="card">
+                <h3>Desarrollo del analisis </h3>
+                <ul>
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit, dictumst sagittis non suscipit justo
+                    himenaeos morbi, inceptos faucibus hendrerit tellus pharetra conubia. Aenean primis nunc congue
+                    pretium ornare vestibulum vehicula neque elementum, dapibus lacus eu maecenas torquent nostra luctus
+                    massa himenaeos praesent, suscipit purus auctor erat malesuada porttitor lectus nec. Et dictumst
+                    curae quisque arcu etiam ullamcorper, facilisis egestas nam dui phasellus nascetur ut, ac lacinia
+                    risus blandit dictum.
+                    Natoque in habitant inceptos litora hendrerit pharetra habitasse, sodales vulputate porta vehicula
+                    sollicitudin. Eleifend purus netus faucibus leo varius pharetra pulvinar in, aliquet potenti
+                    vestibulum enim sem donec cras integer urna, iaculis convallis dictumst consequat porta ante nisi.
+                    Natoque laoreet bibendum donec posuere tellus hendrerit mollis, parturient netus porttitor arcu
+                    rutrum dignissim.
+                </ul>
+            </div>
+        </section>
+
+
         </section>
     </main>
 </body>
+
 </html>

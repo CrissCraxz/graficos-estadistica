@@ -212,3 +212,68 @@ main {
     border: none;
     max-width: 100%;
 }
+
+
+/* ==========================================================================
+   BLOQUE DE OPTIMIZACIÓN PARA EXPORTACIÓN A PDF (No afecta a la navegación web)
+   ========================================================================== */
+@media print {
+    /* 1. Ajustes del cuerpo general para el PDF */
+    body {
+        background-color: #FFFFFF !important;
+        color: #000000 !important;
+        font-size: 11pt;
+    }
+
+    main {
+        margin: 1rem auto !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+    }
+
+
+
+    /* 3. Prevenir cortes feos de páginas a la mitad de una gráfica o tarjeta */
+    .card, .chart-container, .iframe-wrapper, .scrollable-wrapper, .sheets-wrapper {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        box-shadow: none !important;
+        background: #FFFFFF !important;
+    }
+
+    /* 4. PROTECCIÓN DE TUS IMÁGENES: Asegura que V1, V2, V3 y V4 escalen y no se rompan */
+    img, .responsive-img {
+        max-width: 100% !important;
+        height: auto !important;
+        display: block !important;
+        page-break-inside: avoid !important;
+    }
+
+    /* 5. Ajuste para iframes con altura absoluta (Evita que salgan planos o vacíos) */
+    .iframe-wrapper {
+        padding-top: 0 !important;
+        height: 480px !important; /* Altura física fija reservada en el PDF */
+    }
+
+    .iframe-wrapper iframe {
+        position: relative !important;
+        height: 100% !important;
+        width: 100% !important;
+    }
+
+    /* 6. SOLUCIÓN PARA LA ÚLTIMA GRÁFICA (Data Studio / Dashboard Animado) */
+    .scrollable-wrapper {
+        overflow: visible !important; /* Quita las barras de scroll en el PDF */
+        border: none !important;
+        padding: 0 !important;
+    }
+
+    .scrollable-wrapper iframe {
+        width: 100% !important;
+        height: 750px !important; /* Forzar altura suficiente para capturar todo el cuadro */
+    }
+
+    .sheets-wrapper iframe {
+        width: 100% !important; /* Se adapta por completo al ancho del papel */
+    }
+}
